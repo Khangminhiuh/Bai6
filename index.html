@@ -3,475 +3,1410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAi6</title>
+    <title>Zendesk</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-         body {
-            font-family:Arial, Helvetica, sans-serif;
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #F8F9F9;
-;
-            color: black;
+            color: #000;
+            overflow-x: hidden;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        button,
+        input {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            cursor: pointer;
         }
         .page {
+            width: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
-        .one{
-            
-            min-width: 100%;
+        .one {
+            width: 100%;
             background-color: #52705E;
         }
-        .one-page{
+        .one-page {
+            width: 100%;
+            max-width: 1440px;
+            margin: auto;
             display: flex;
-            min-width: 100%;
             justify-content: center;
             align-items: center;
-            padding: 156px 168px 64px;
             gap: 100px;
+            padding: 156px 168px 64px;
+        }
+        .one-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .textandbut {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-right: 50px;
+        }
+        .text-small {
+            width: fit-content;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .one h1 {
+            max-width: 494px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 67px;
+            line-height: 80px;
+            font-weight: 700;
+            color: white;
+        }
+        .one p {
+            max-width: 504px;
+            margin-top: 16px;
+            font-size: 19px;
+            line-height: 28px;
+            font-weight: 700;
+            color: white;
+        }
+        .button-one {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .btn-right,
+        .btn-left {
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        .btn-right {
+            width: 168px;
+            background-color: #ECE0CE;
+            color: black;
+            border: none;
+        }
+        .btn-left {
+            width: 146px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
         }
         .one-image {
             width: 379px;
             height: 512px;
+            flex-shrink: 0;
         }
-        .textandbut {
-           display: flex;
-              flex-direction: column;
-              gap: 16px;
+        .one-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
-        .text-small{
-            font-size: 11px;
-            font-weight: 700;
-            width: 207px;
-            line-height: 22px;
-            letter-spacing: 2px;
-            color: white;
-
-            
-        }
-    .one h1 {
-        font-family: 'Arial';
-        font-weight: 700;
-        font-size: 67px;
-        line-height: 80px;
-        color: #FFFFFF;
-        width: 494px;
-    }
-    .one p{
-        font-family: Arial, Helvetica, sans-serif;
-        width: 504px;
-        font-size: 19px;
-        line-height: 28px;
-        font-weight: 700;
-        color: white;
-        margin-top: 16px;
-    }
-        .button-one{
-            display: flex;
-            gap: 16px;
-            margin-top: 12px;
-        }
-        .btn-right{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ECE0CE;
-            color: black;
-            width: 168px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 17px;
-            height: 48px;
-            font-weight: 700;
-            letter-spacing: 0%;
-            line-height: 28px;
-            border: none;
-        }
-        .btn-left{
-             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: transparent;
-            color: white;
-            width: 146px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 17px;
-            border: 2px solid white;
-            height: 48px;
-            font-weight: 700;
-            letter-spacing: 0%;
-            line-height: 28px;
-        }
-        .two{
+        .two {
+            width: 100%;
             background-color: white;
-            min-width: 100%;
-            display: flex;
+               padding: 64px 176px;
         }
-        .two-page{
+        .two-page {
+            width: 100%;
+            max-width: 1440px;
+            margin: auto;
+            min-height: 38px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-width: 100%;
-            padding: 64px 176px;
             gap: 40px;
         }
-        .three{
-            display: flex;
-            flex-direction: column;
-            min-width: 100%;
-            background-color: white;
-            justify-content: center;
-            align-items: center;
+        .two-page img {
+            width: auto;
+            max-width: 106px;
+            max-height: 27px;
+            object-fit: contain;
         }
-        .three-page{
+        .three {
+            width: 100%;
+            background-color: white;
+        }
+        .three-page {
+            width: 100%;
+            max-width: 1440px;
+            margin: auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             gap: 64px;
-            max-width: 1440px;
             padding: 64px 176px;
         }
-        .three-text{
+        .three-text {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             gap: 16px;
-            max-width: 1104px;
+            text-align: center;
         }
-        .three-small{
+        .three-small {
             font-size: 11px;
-            font-weight: 700;
             line-height: 22px;
-            letter-spacing: 2px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .three-text h2{
             font-weight: 700;
-            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 2px;
+        }
+        .three-text h2 {
             font-size: 29px;
             line-height: 40px;
-            letter-spacing: 0%;
+            font-weight: 700;
         }
-        .three-big{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .three-big {
             width: 100%;
+            max-width: 1088px;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
             gap: 16px;
         }
-        .three1{
+        .three1-page {
+            flex: 1;
+            min-width: 0;
+        }
+        .three1 {
+            height: 100%;
             display: flex;
             flex-direction: column;
-            width: 100%;
-            justify-content: center;
             align-items: center;
-            padding: 24px 36px;
+            padding: 24px 25px;
+            text-align: center;
         }
-        .three1 img{
-            width: 64px;
-            height: 64px;
-        }
-        .three1 h2{
+        .three1 h2 {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 44px 0 30px 0;
             font-size: 22px;
             line-height: 32px;
-            letter-spacing: 0%;
-            display: flex;
-            justify-content: center;
+            font-weight: 700;
             text-align: center;
-            margin:44px 0 30px 0;
         }
-        .three1 p{
+        .three1 p {
+            width: 100%;
+            max-width: 287px;
             font-size: 16px;
             line-height: 24px;
-            width: 287px;
-            letter-spacing: 0%;
-            text-align: center;
             color: #17494D;
-;
+            text-align: center;
+            margin-bottom: 26px;
         }
-        .three-end{
+        .three-end {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
-            width: 100%;
-            padding-bottom: 24px;
+            gap: 8px;
         }
-       .three-end img {
-        width: 24px;
-        height: 24px;
-        padding-top : 0;
-        display: block;
-       }
-       .three1-page{
-        width: 100%;
-       }
-        span{
-        color:#17494D;
-        border-bottom: 2px solid #17494D;
-        font-size: 17px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-       }
-       .four{
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       }
-       .four-page{
-        display: flex;
-        max-width: 1440px;
-        justify-content: center;
-        align-items: center;
-        padding: 64px 168px;
-        gap: 100px;
-       }
-       .four-images{
-        width: 100%;
-        padding: 0 0 3px 8px;
-       }
-       .four-text{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 100%;
-       }
-       .four-small{
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 22px;
-        letter-spacing: 2px;
-       color : #03363D;
-
-       }
-       .four-text h2{
-        font-size: 44px;
-        line-height: 56px;
-        color: #03363D;
-
-       }
-       .four-text p{
-        font-size: 16px;
-        color:#17494D;
-        line-height: 24px;
-        margin-top: 14px;
-       }
-       .four-end{
-        display: flex;
-     font-size: 17px;
-     font-weight: 700;
-       }
-       .four-end span{
-        border-bottom: none;
-       }
-       .five{
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       }
-       .five-page{
-        display: flex;
-        background-color:#03363D;
-;
-       }
-        .eight{
-            width: 100%;
-            background-color: white;
+        .three-end span {
+            color: #17494D;
+            border-bottom: 2px solid #17494D;
+            font-size: 17px;
+            line-height: 24px;
+            font-weight: 700;
         }
-        .eight-page{
+        .three-end img {
+            width: 24px; 
+            height: 24px; 
+            padding: 0; 
+        }
+        .four {
+            width: 100%;
+            background-color: #F8F9F9;
+            padding: 64px 168px;
+        }
+        .four-page {
+            width: 100%;
+            max-width: 1104px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        .text-pp {
+            flex: 1;
+            min-width: 0;
+        }
+        .four-text {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 64px 176px;
-        }
-        .eight-text{
-            display: flex;
-            flex-direction: column;
-            width: 736px;
-            justify-content: center;
-            align-items: center;
             gap: 16px;
         }
-        .eight-small{
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 22px;
-        letter-spacing: 2px;
+        .four-small {
+            font-size: 12px;
+            line-height: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #03363D;
         }
-        .sp-1{
+        .four-text h2 {
+            font-size: 44px;
+            line-height: 56px;
+            font-weight: 700;
+            color: #03363D;
+        }
+        .four-text p {
+            margin-top: 14px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #17494D;
+        }
+        .four-end {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .four-end span {
+            border-bottom: none;
+        }
+        .four-end img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .five {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 64px 176px;
+            background-color: #F8F9F9;
+        }
+        .five-page {
+            width: 100%;
+            max-width: 1088px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 64px 56px 67px;
+            background-color: #03363D;
+        }
+        .five-text {
+            flex: 1;
             display: flex;
             flex-direction: column;
+            gap: 24px;
+            color: white;
+        }
+        .five-text h3 {
+            font-size: 21px;
+            line-height: 32px;
+        }
+        .five-text p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+        .btn-five {
+            min-width: 189px;
+            height: 40px;
+            padding: 0 20px;
+            display: flex;
             justify-content: center;
             align-items: center;
-        }   
+            background-color: #ECE0CE;
+            color: black;
+            border: none;
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 700;
+        }
+        .six {
+            width: 100%;
+            background-color: white;
+            padding: 64px 168px;
+        }
+           .six-page {
+            width: 100%;
+            max-width: 1088px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        .six-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .six-small {
+            font-size: 12px;
+            line-height: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #03363D;
+        }
+        .six-text h2 {
+            margin: 16px 0;
+            font-size: 43px;
+            line-height: 56px;
+            color: #03363D;
+            margin: 16px 0 30px 0;
+        }
+        .six-text p {
+            font-size: 16px;
+            line-height: 24px;
+            color: #17494D;
+            font-weight: 400;
+            margin-bottom: 22px;
+        }
+        .six-end {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        .six-end img {
+            width: 24px;
+            height: 24px;
+        }
+    .six-image {
+    position: relative;
+    width: 444px;
+    height: 360px;
+    flex-shrink: 0;
+}
+.six-image img {
+    position: absolute;
+    object-fit: contain;
+}
+.six-image img:first-child {
+    width: 295px;
+    height: 295px;
+    top: 0;
+    left: 150px;
+    z-index: 1;
+}
+.six-image img:last-child {
+    width: 259px;
+    height: 185px;
+    top: 175px;      
+    left: 0;    
+    z-index: 2;
+}
+        .seven {
+            width: 100%;
+            background-color: #F8F9F9;
+            padding: 64px 176px;
+        }
+        .seven-page {
+            margin: auto;
+            width: 100%;
+            max-width: 1088px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 64px;
+        }
+        .seven-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+        .seven-small {
+            font-size: 12px;
+            line-height: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #03363D;
+        }
+        .seven-text h2 {
+            font-size: 43px;
+            line-height: 56px;
+            color: #03363D;
+        }
+        .seven-infor {
+           display:flex;
+           align-items: center;
+           justify-content: center;
+           gap: 16px;
+        }
+        .infor-left,
+        .infor-right {
+           display: flex;
+           flex-direction: column;
+            align-items: center;
+           justify-content: center;
+
+        }
+        .infor-left h3,
+        .infor-right h3 {
+            margin: 44px 0 30px 0;
+            font-size: 20px;
+            line-height: 32px;
+            color: #03363D;
+        }
+        .infor-left p{
+            font-size: 16px;
+            line-height: 24px;
+            color: #17494D;
+            text-align: center;
+            max-width: 483px;
+        }
+        .infor-right p{
+            font-size: 16px;
+            line-height: 24px;
+            color: #17494D;
+            text-align: center;
+           max-width: 486px;
+        }
+        .seven-end1 {
+            display: flex;
+            align-items: center;
+            margin-top: 26px;
+        }
+        .seven-end2{
+             display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .seven-end img {
+            width: 24px;
+            height: 24px;
+        }
+        .eight {
+            width: 100%;
+            background-color: white;
+            padding: 64px 176px;
+        }
+        .eight-page {
+            width: 100%;
+            max-width: 1440px;
+            margin: auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+        }
+        .eight-text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .eight-small {
+            font-size: 12px;
+            line-height: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .eight-text h2 {
+            font-size: 44px;
+            line-height: 56px;
+            color: #03363D;
+        }
+        .eight-main {
+            width: 100%;
+            max-width: 1088px;
+            display: flex;
+            flex-direction: column;
+            gap: 39px;
+        }
+        .eight-sp {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+    justify-content: center;
+}
+        .eight-img {
+            padding-top: 64px;
+           display: grid;
+            grid-template-columns: auto 90px auto 85px auto 62px auto 77.5px auto 46.5px auto 34px auto;
+            align-items: center; 
+            .item:nth-child(1) { grid-column: 1; }
+            .item:nth-child(2) { grid-column: 3; }
+            .item:nth-child(3) { grid-column: 5; }
+            .item:nth-child(4) { grid-column: 7; }
+            .item:nth-child(5) { grid-column: 9; }
+            .item:nth-child(6) { grid-column: 11; }
+            .item:nth-child(7) { grid-column: 13; }
+ }
+.sp-text {
+    color: #17494D;
+    align-items: center;
+    justify-content: center;
+    padding: 39px 0 41px 0;
+  display: grid;
+  grid-template-rows: auto 34px auto 24px auto 0 auto;
+}
+.sp-text > .sp0 { 
+  grid-row: 1; 
+}
+.sp-text > .sp-1 { 
+  grid-row: 3; 
+}
+.sp-text > span { 
+  grid-row: 5;
+   justify-self: center; 
+   text-decoration: underline;
+   font-weight: 700;
+}
+.sp-text > .sp-2 { 
+  grid-row: 7; 
+}     
+.sp0{
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 30px;
+    max-width: 470px;
+     justify-self: center;
+     text-align: center;
+}
+     .sp-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         justify-content: center;
+         gap: 14px;
+        }
+        .sp-1 h2 {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        .sp-1 h3 {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+        }
+        .sp-text span{
+            display: flex;
+            align-items: center;
+         justify-content: center;
+        }
+        .sp-2{
+            display: flex;
+            gap: 21px;
+            font-size: 32px;
+            line-height: 40px;
+        }
+        .sp-3{
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+            text-align: center;
+            align-items: center;
+         justify-content: center;
+         padding: 32px 8px 14px 8px;
+         max-width: 106px;
+         flex: 1;
+         min-width: 0;
+        }
+        .sp-3 h2{
+            white-space: nowrap;
+        }
+        .sp-3 p{
+            font-size: 14px;
+            line-height: 100%;
+        }
+         .nine {
+            width: 100%;
+            background-color: #52705E;
+              padding: 64px 168px;
+        }
+
+        .nine-page {
+            width: 100%;
+            max-width: 1440px;
+            min-height: 420px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+        }
+        .nine img{
+            border-radius: 50%;
+        }
+
+        .nine-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+        }
+        .nine-text h2 {
+            font-size: 56px;
+            line-height: 64px;
+            color: white;
+        }
+        .nine-button {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .nine-left,
+        .nine-right {
+            height: 48px;
+            padding: 0 28px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .nine-left {
+            background-color: #ECE0CE;
+            color: black;
+            border: none;
+        }
+        .nine-right {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+.ten {
+    width: 100%;
+    background-color: white;
+    color: #758087;
+    padding: 0 160px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ten-page {
+    width: 100%;
+    max-width: 1088px;
+    display:flex;
+    flex-direction: column;
+    padding-top:64px;
+}
+.ten-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px ;
+}
+.ten-top  img {
+    width: 32px;
+    height: auto;
+    display: block;
+    align-self: flex-start;
+    margin-bottom: 28px;
+}
+.ten-text {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.ten-text  h2 {
+    width: 128px;
+    margin: 0;
+    color: #03363D;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 700;
+}
+.ten-sp {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.ten-sp h4 {
+    color: #03363D;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.ten-p {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.ten-p p {
+    margin: 0;
+    color: #53656B;
+    font-size: 10px;
+    line-height: 15px;
+    white-space: nowrap;
+}
+.end {
+    width: 100%;
+    background-color: white;
+    color: #758087;
+    margin-top: 24px;
+}
+.end-top {
+    width: 100%;
+    max-width: 1088px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.end-text {
+    width: 260px;
+    flex-shrink: 0;
+}
+.end-text h3 {
+    color: #005a63;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
+.end-text p {
+    margin: 0;
+    color: #005a63;
+    font-size: 11px;
+    line-height: 18px;
+}
+.end-search {
+    width: 437px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.name-input {
+    width: 308px;
+    height: 48px;
+    padding: 0 14px;
+    background-color: #f5f6f7;
+    border: none;
+    color: #333;
+    font-size: 13px;
+   box-shadow: 0px 0px 0px 1px #68737D;
+
+}
+.name-input::placeholder {
+    color: #b9bec2;
+}
+.subcribe {
+    width: 128px;
+    height: 48px;
+    border: none;
+    background-color: #005a63;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+   box-shadow: 0px 0px 0px 1px #68737D;
+
+}
+.end-img {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.end-img img {
+    width: 27px;
+    height: 27px;
+    display: block;
+    object-fit: contain;
+}
+.end-bot {
+    width: 100%;
+    max-width: 1088px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+.end-bot span {
+    color: #758087;
+    font-size: 9px;
+    line-height: 14px;
+    white-space: nowrap;
+}
+.end-bot span:hover {
+    color: white;
+}
+@media (max-width: 1200px) {
+    .one-page {
+        padding: 100px 6%;
+        gap: 60px;
+    }
+
+    .one h1 {
+        font-size: 56px;
+        line-height: 68px;
+    }
+    .two,
+    .three-page,
+    .four,
+    .six,
+    .seven,
+    .eight,
+    .nine,
+    .five,
+    .ten {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .ten-text {
+        gap: 16px;
+    }
+    .ten-text  h2 {
+        flex: 0 0 140px;
+        width: 140px;
+    }
+    .ten-sp {
+        min-width: 0;
+    }
+    .ten-p p {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .one-page {
+        gap: 40px;
+    }
+    .one-image {
+        width: 32vw;
+        max-width: 320px;
+        height: auto;
+    }
+    .four-page,
+    .six-page,
+    .nine-page {
+        gap: 50px;
+    }
+    .three-big {
+        gap: 12px;
+    }
+    .five-page {
+        gap: 25px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .seven-infor {
+        gap: 30px;
+    }
+    .ten-text {
+        gap: 18px;
+    }
+    .ten-text  h2 {
+        flex: 0 0 120px;
+        width: 120px;
+        font-size: 20px;
+    }
+    .ten-sp h4 {
+        font-size: 10px;
+    }
+    .ten-p {
+        gap: 7px;
+    }
+    .ten-p p {
+        font-size: 9px;
+        line-height: 14px;
+    }
+}
+@media (max-width: 800px) {
+
+    .one-page {
+        padding: 80px 40px 50px;
+    }
+
+    .one h1 {
+        font-size: 46px;
+        line-height: 56px;
+    }
+    .one p {
+        font-size: 17px;
+        line-height: 26px;
+    }
+    .two {
+        padding: 50px 40px;
+    }
+    .two-page {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .three-page,
+    .four,
+    .six,
+    .seven,
+    .eight,
+    .nine,
+    .five {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .four-page,
+    .six-page,
+    .nine-page {
+        gap: 40px;
+    }
+    .five-page {
+        padding: 50px 35px;
+    }
+    .seven-infor {
+        gap: 30px;
+    }
+    .eight-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .ten {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .ten-text {
+        flex-wrap: wrap;
+        gap: 25px 20px;
+    }
+    .ten-text > h2 {
+        width: 100%;
+        flex: 0 0 100%;
+        font-size: 22px;
+    }
+    .ten-sp {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 150px;
+    }
+    .end-top {
+        flex-wrap: wrap;
+    }
+    .end-text {
+        width: 220px;
+    }
+    .end-search {
+        flex: 1;
+        width: auto;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+    .one-page {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 24px 40px;
+        gap: 40px;
+    }
+
+    .one-text {
+        width: 100%;
+    }
+
+    .textandbut {
+        padding-right: 0;
+    }
+
+    .one h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .one p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .one-image {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        align-self: center;
+    }
+    .button-one {
+        flex-wrap: wrap;
+    }
+    .two {
+        padding: 40px 24px;
+    }
+    .two-page {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    .three-page {
+        padding: 50px 24px;
+        gap: 40px;
+    }
+
+    .three-text h2 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .three-big {
+        flex-direction: column;
+        width: 100%;
+    }
+    .three1 {
+        padding: 24px 10px;
+    }
+    .three1 h2 {
+        margin: 30px 0 20px;
+    }
+    .four {
+        padding: 50px 24px;
+    }
+    .four-page {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    .four-page img {
+        width: 100%;
+        max-width: 500px;
+    }
+    .four-text h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .five {
+        padding: 40px 24px;
+    }
+    .five-page {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 24px;
+    }
+    .five-page  img {
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+    }
+    .btn-five {
+        width: 100%;
+    }
+    .six {
+        padding: 50px 24px;
+    }
+    .six-page {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    .six-text h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .six-image {
+        width: 100%;
+        max-width: 444px;
+        align-self: center;
+    }
+    .seven {
+        padding: 50px 24px;
+    }
+    .seven-text h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .seven-infor {
+        flex-direction: column;
+        width: 100%;
+        gap: 50px;
+    }
+    .eight {
+        padding: 50px 24px;
+    }
+    .eight-text h2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .eight-img {
+        padding-top: 40px;
+        gap: 25px;
+    }
+    .sp0 {
+        font-size: 19px;
+        line-height: 28px;
+    }
+    .sp-2 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nine {
+        padding: 50px 24px;
+    }
+    .nine-page {
+        flex-direction: column;
+        gap: 40px;
+        min-height: auto;
+    }
+    .nine-text {
+        align-items: center;
+        text-align: center;
+    }
+    .nine-text h2 {
+        font-size: 42px;
+        line-height: 50px;
+    }
+    .nine-page img {
+        width: 100%;
+        max-width: 320px;
+    }
+    .ten {
+        padding: 0 24px 30px;
+    }
+    .ten-page {
+        padding-top: 40px;
+    }
+    .ten-text {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .ten-text   h2 {
+        width: 100%;
+        flex: none;
+        font-size: 22px;
+    }
+    .ten-sp {
+        width: 100%;
+        flex: none;
+    }
+    .ten-p p {
+        white-space: normal;
+        font-size: 11px;
+    }
+    .end {
+        margin-top: 24px;
+    }
+    .end-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .end-text {
+        width: 100%;
+    }
+    .end-search {
+        width: 100%;
+        min-width: 0;
+    }
+    .name-input {
+        width: 100%;
+    }
+    .subcribe {
+        flex-shrink: 0;
+    }
+    .end-img {
+        margin-left: 0;
+    }
+    .end-bot {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
     </style>
 </head>
 <body>
-    <div class="page">
-        <section class="one">
-            <div class="one-page">
-            <div class="textandbut">
-                <div class="text-small">
-                   ZENDESK FOR ENTERPRISE
-                </div>
-                <h1>
-                Transform your relationships with customers
-                </h1>
-                <p>
-                Zendesk empowers you to adapt to changing customer expectations. Align your teams and technology around what matters most—the customer.
-                </p>
-                <div class="button-one">
-                   <button class="btn-right">Contact Sales</button>
-                   <button class="btn-left">View demo</button>
-                </div>
-            </div>
-            <div class="one-image">
-                <img src="/logo/Image.svg" alt="ONE">
-            </div>
-            </div>
-        </section>
-        <section class="two">
-            <div class="two-page">
-                <img src="/logo/Frame (8).svg" alt="TWO">
-                <img src="/logo/Frame (12).svg" alt="TWO">
-                <img src="/logo/Frame (11).svg" alt="TWO">
-                <img src="/logo/Vector (16).svg" alt="TWO">
-                <img src="/logo/Frame.svg" alt="TWO">
-                <img src="/logo/Frame (1).svg" alt="TWO">
-            </div>
-        </section>
-        <section class="three">
-            <div class="three-page">
-            <div class="three-text">
-            <div class="three-small">
-                BUILT FOR THE ENTERPRISE
-            </div>
-            <h2>
-                The future of customer experience
-            </h2>
-            </div>
-            <div class="three-big">
-                <div class="three1-page">
-                <div class="three1">
-                    <img src="/logo/Vector (17).svg">
-                    <h2>
-                        Drive better conversations
-                    </h2>
+<div class="page">
+    <section class="one">
+        <div class="one-page">
+            <div class="one-text">
+                <div class="textandbut">
+                    <div class="text-small">
+                        ZENDESK FOR ENTERPRISE
+                    </div>
+                    <h1>
+                        Transform your relationships with customers
+                    </h1>
                     <p>
-                        Offer rich, personalized conversations on the channels customers choose. 
-                        They’ll feel like more than a transaction; you’ll encourage long-term loyalty.
+                        Zendesk empowers you to adapt to changing customer expectations.
+                        Align your teams and technology around what matters most—the customer.
                     </p>
-                    <div class="three-end">
-                       <span>Conversational features</span><img src="/logo/Frame (28).svg">
+                    <div class="button-one">
+                        <button class="btn-right">
+                            Contact Sales
+                        </button>
+                        <button class="btn-left">
+                            View demo
+                        </button>
                     </div>
                 </div>
                 </div>
-                <div class="three1-page">
-                <div class="three1">
-                    <img src="/logo/Frame (3).svg">
-                    <h2>
-                        Maximize agent efficiency
-                    </h2>
-                    <p style="font-size: 15px;">
-                       Transform agents from problem solvers to revenue drivers. With our all-in-one workspace, they’ll focus less on repetitive tasks and more on relationship building.
-                    </p>
-                    <div class="three-end">
-                         <span>Productivity features</span>
-                        <img src="logo/Frame (28).svg">
-                    </div>
+                <div class="one-image">
+                    <img src="logo/Image.svg" alt="Zendesk">
                 </div>
-                </div>
-                <div class="three1-page">
-                <div class="three1">
-                    <img src="/logo/Frame (2).svg">
-                    <h2>
-                        Adapt faster to change
-                    </h2>
-                    <p style="font-size: 15px;">
-                        Keep up with changing customer demands. Enter new markets and scale even faster with the open, flexible solutions on our complete Sunshine platform.
-                    </p>
-                    <div class="three-end">
-                          <span>Zendesk platform</span>
-                         <img src="/logo/Frame (28).svg">
-                    </div>
-                </div>
-                </div>
-            </div>
             </div>
         </section>
-           <section class="four">
-            <div class="four-page">
-            <div class="four-images">
-            <img src="/logo/Image (1).svg">
-            </div>
-            <div class="four-text">
-                <div class="four-small">
-                    ZENDESK SUNSHINE PLATFORM
+    <section class="two">
+        <div class="two-page">
+            <div><img src="logo/Frame (8).svg" alt="Company logo" style="max-width: 106px; max-height: 27px"></div>
+            <div><img src="logo/Frame (12).svg" alt="Company logo" style="max-width: 161px; max-height: 23px;"></div>
+            <div><img src="logo/Frame (11).svg" alt="Company logo" style="max-width: 96px; max-height: 27px"></div>
+            <div><img src="logo/Vector (16).svg" alt="Company logo" style="max-width: 152px; max-height: 31px"></div> 
+            <div><img src="logo/Frame.svg" alt="Company logo" style="max-width: 59px; max-height: 21px"></div> 
+            <div><img src="logo/Frame (1).svg" alt="Company logo" style="max-width: 173px; max-height: 38px"></div>
+    </section>
+    <section class="three">
+        <div class="three-page">
+            <div class="three-text">
+                <div class="three-small">
+                     BUILT FOR THE ENTERPRISE
                 </div>
                 <h2>
-                    Open, flexible architecture
+                    The future of customer experience
                 </h2>
-                <p>
-                    Our library of 1200+ apps and integrations lets you add your everyday systems with a click, and our comprehensive set of APIs allows you to extend and customize solutions. When you connect your tech stack to Zendesk, data is useful and usable.
-                </p>
-                <div class="four-end">
-                   <span>Explore platform</span>
-                    <img src="/logo/Frame (14).svg">
+            </div>
+                <div class="three-big">
+                    <div class="three1-page">
+                        <div class="three1">
+                            <img src="logo/Vector (17).svg" alt="Icon">
+                            <h2>
+                                Drive better conversations
+                            </h2>
+                            <p>
+                                Offer rich, personalized conversations on the channels customers choose.
+                                They’ll feel like more than a transaction; you’ll encourage long-term loyalty.
+                            </p>
+                            <div class="three-end">
+                                <span>
+                                    Conversational features
+                                </span>
+                                <img src="logo/Frame (28).svg" alt="Arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three1-page">
+                        <div class="three1">
+                            <img src="logo/Frame (3).svg" alt="Icon">
+                            <h2>
+                                Maximize agent efficiency
+                            </h2>
+                            <p style="font-size: 15px;">
+                                Transform agents from problem solvers to revenue drivers.
+                                With our all-in-one workspace, they’ll focus less on repetitive
+                                tasks and more on relationship building.
+                            </p>
+                            <div class="three-end">
+                                <span>
+                                    Productivity features
+                                </span>
+
+                                <img src="logo/Frame (28).svg" alt="Arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three1-page">
+                        <div class="three1">
+                            <img src="logo/Frame (2).svg" alt="Icon">
+                            <h2>
+                                Adapt faster to change
+                            </h2>
+                            <p style="font-size: 15px;">
+                                Keep up with changing customer demands.
+                                Enter new markets and scale even faster with the open,
+                                flexible solutions on our complete Sunshine platform.
+                            </p>
+                            <div class="three-end">
+                                <span>
+                                    Zendesk platform
+                                </span>
+                                <img src="logo/Frame (28).svg" alt="Arrow">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+    <section class="four">
+        <div class="four-page">
+            <img src="logo/Image (1).svg" alt="Zendesk Sunshine">
+            <div class="text-pp">
+                <div class="four-text">
+                    <div class="four-small">
+                         ZENDESK SUNSHINE PLATFORM
+                    </div>
+                    <h2>
+                         Open, flexible architecture
+                    </h2>
+                    <p>
+                        Our library of 1200+ apps and integrations lets you add your
+                        everyday systems with a click, and our comprehensive set of APIs
+                        allows you to extend and customize solutions. When you connect
+                        your tech stack to Zendesk, data is useful and usable.
+                    </p>
+                    <div class="four-end">
+                        <span>
+                            Explore platform
+                        </span>
+                        <img src="logo/Frame (14).svg" alt="Arrow">
+                    </div>
+                </div>
             </div>
-           </section>
-           <section class="five">
-            <div class="five-page">
-            <img src="/logo/Image (2).svg">
+         </div>
+    </section>
+    <section class="five">
+        <div class="five-page">
+            <img src="logo/Image (2).svg" alt="ROI">
             <div class="five-text">
                 <h3>
                     Evaluate Zendesk ROI
                 </h3>
                 <p>
-                    Forrester shows the cost and benefits of Zendesk, pointing to an ROI of 286% with payback in less than six months for a composite organization.
+                    Forrester shows the cost and benefits of Zendesk,
+                    pointing to an ROI of 286% with payback in less than
+                    six months for a composite organization.
                 </p>
+                </div>
+                <button class="btn-five">
+                    See ROI resources
+                </button>
             </div>
-            <div class="five-button">
-                <button class="btn-five">See ROI resources</button>
-            </div>
-            </div>
-           </section>
-           <section class="six">
-                <div class="six-page">
-                    <div six-text>
-                        <div class="six-small">
+    </section>
+    <section class="six">
+        <div class="six-page">
+            <div class="six-text">
+                <div class="six-small">
                     SECURITY AND COMPLIANCE
                 </div>
                 <h2>
                     You’re safe with us
                 </h2>
                 <p>
-                   Trusted by Fortune 100 companies, our privacy and data protection program includes a team dedicated to global compliance. We operate within all regulatory and industry frameworks—because software is only as good as its security.
+                    Trusted by Fortune 100 companies, our privacy and data
+                    protection program includes a team dedicated to global
+                    compliance. We operate within all regulatory and industry
+                    frameworks—because software is only as good as its security.
+                    </p>
                 <div class="six-end">
-                    <span>Full compliance details</span><img src="/logo/Frame (14).svg">
-                </div>
+                    <span>
+                        Full compliance details
+                    </span>
+                    <img src="logo/Frame (14).svg" alt="Arrow">
                     </div>
-                    <div class="six-image">
-                        <img src="/logo/Frame (15).svg">
-                    </div>
                 </div>
-           </section>
-           <section class="seven">
+                <div class="six-image">
+                    <img src="logo/Frame (29).svg" alt="img-sau">
+                    <img src="logo/Auto Layout Horizontal (1).svg" alt="img-truoc">
+                </div>
+            </div>
+        </section>
+        <section class="seven">
             <div class="seven-page">
                 <div class="seven-text">
                     <div class="seven-small">
@@ -483,35 +1418,47 @@
                 </div>
                 <div class="seven-infor">
                     <div class="infor-left">
-                        <img src="/logo/Frame (4).svg">
+                        <img src="logo/Frame (4).svg" alt="Icon">
                         <h3>
                             Bring your vision to life
                         </h3>
-                        <P>
-                            Partner with our world-class experts to design and implement Zendesk. Our Professional Services team will give you the personalized service you need to reduce time-to-value and transform your service offerings.
-                        </P>
-                        <div class="seven-end">
-                            <span>Full compliance details</span><img src="/logo/Frame (14).svg">
-                         </div>
+                        <p>
+                            Partner with our world-class experts to design and
+                            implement Zendesk. Our Professional Services team will
+                            give you the personalized service you need to reduce
+                            time-to-value and transform your service offerings.
+                        </p>
+                        <div class="seven-end1">
+                            <span style="border-bottom: 2px solid #17494D;">
+                                Full compliance details
+                            </span>
+                            <img src="logo/Frame (14).svg" alt="Arrow">
+                        </div>
                     </div>
                     <div class="infor-right">
-                        <img src="/logo/Vector (18).svg">
+                        <img src="logo/Vector (18).svg" alt="Icon">
                         <h3>
                             Find your industry
                         </h3>
                         <p>
-                            We know every industry works a little differently. Whether you work in retail, manufacturing, financial services, or any other sector, our expertise will help you make the most of Zendesk.
+                            We know every industry works a little differently.
+                            Whether you work in retail, manufacturing, financial
+                            services, or any other sector, our expertise will help
+                            you make the most of Zendesk.
                         </p>
-                         <div class="seven-end">
-                            <span>View Zendesk industries</span><img src="/logo/Frame (14).svg">
-                         </div>
+                        <div class="seven-end2">
+                            <span style="border-bottom: 2px solid #17494D;">
+                                View Zendesk industries
+                            </span>
+                            <img src="logo/Frame (14).svg" alt="Arrow">
+                        </div>
                     </div>
                 </div>
             </div>
-           </section>
-           <section class="eight">
-             <div class="eight-page">
-                 <div class="eight-text">
+        </section>
+        <section class="eight">
+            <div class="eight-page">
+                <div class="eight-text">
                     <div class="eight-small">
                         CUSTOMER STORIES
                     </div>
@@ -522,18 +1469,22 @@
                 <div class="eight-main">
                     <div class="eight-sp">
                         <div class="eight-img">
-                        <img src="/logo/Frame (18).svg">
-                        <img src="/logo/Frame (6).svg">
-                        <img src="/logo/Frame (7).svg">
-                        <img src="/logo/Frame (19).svg">
-                        <img src="/logo/Frame (10).svg">
-                        <img src="/logo/Frame (9).svg">
-                        <img src="/logo/Vector (22).svg"
+                          <div class="item"><img src="logo/Frame (18).svg" alt="Company" style="width: 24px; height: 24px;"></div>
+                           <div class="item"><img src="logo/Frame (6).svg" alt="Company" style="width: 44px; height: 24px; opacity: 40%;"></div>
+                           <div class="item"><img src="logo/Frame (7).svg" alt="Company" style="width: 182px; height: 29px; opacity: 40%;"></div>
+                           <div class="item"><img src="logo/Frame (19).svg" alt="Company" style="width: 90px; height: 28px;"></div>
+                           <div class="item"><img src="logo/Frame (10).svg" alt="Company" style="width: 151px; height: 20px; opacity: 40%;"></div>
+                           <div class="item"><img src="logo/Frame (9).svg" alt="Company" style="width: 152px; height: 28px; opacity: 40%;"></div>
+                            <div class="item"><img src="logo/Vector (22).svg" alt="Company" style="width: 24px; height: 24px;"></div>
                         </div>
                         <div class="sp-text">
+                            <div class="sp0">
                             <p>
-                                “Time-to-cash absolutely improves with Zendesk; with faster resolution times, SMC fulfills and invoices orders more quickly”
+                                “Time-to-cash absolutely improves with Zendesk;
+                                with faster resolution times, SMC fulfills and
+                                invoices orders more quickly”
                             </p>
+                            </div>
                             <div class="sp-1">
                                 <h2>
                                     Robin Rodriguez
@@ -542,25 +1493,27 @@
                                     Global manager of platform and service delivery
                                 </h3>
                             </div>
-                            <span>Read more</span><img src="/logo/Frame (14).svg">
+                            <span>
+                                Read more<img src="logo/Frame (28).svg" alt="readmore">
+                            </span>
                             <div class="sp-2">
                                 <div class="sp-3">
                                     <h2>
                                         15
                                     </h2>
-                                    <p>
+                                    <p style="font-size: 13px; line-height: 100%;">
                                         languages supported
                                     </p>
                                 </div>
-                                <div class="sp-31">
+                                <div class="sp-3">
                                     <h2>
                                         1000+
                                     </h2>
-                                    <p>
+                                    <p style="font-size: 13px; line-height: 100%;">
                                         agents
                                     </p>
                                 </div>
-                                <div class="sp-32">
+                                <div class="sp-3">
                                     <h2>
                                         4
                                     </h2>
@@ -568,7 +1521,7 @@
                                         months time to implementation
                                     </p>
                                 </div>
-                                <div class="sp33-">
+                                <div class="sp-3">
                                     <h2>
                                         83
                                     </h2>
@@ -580,256 +1533,170 @@
                         </div>
                     </div>
                 </div>
-             </div>
-           </section>
-           <section class="nine">
+            </div>
+        </section>
+        <section class="nine">
             <div class="nine-page">
-            <div class="nine-text">
-                <h2>
-                    Zendesk in action
-                </h2>
-                <div class="nine-button">
-                    <button class="nine-left">Request demo</button>
-                    <button class="nine-right">Contact Sales</button>
+                <div class="nine-text">
+                    <h2>
+                        Zendesk in action
+                    </h2>
+                    <div class="nine-button">
+                        <button class="nine-left">
+                            Request demo
+                        </button>
+                        <button class="nine-right">
+                            Contact Sales
+                        </button>
+                    </div>
                 </div>
+                 <img src="logo/Image (5).svg" alt="Zendesk in action">
             </div>
-            </div>
-            <img src="/logo/Image (5).svg">
-           </section>
-           <footer class="ten">
+        </section>
+        <footer class="ten">
             <div class="ten-page">
-            <div class="ten-top">
-            <div class="ten-image">
-                <img src="/logo/Frame (17).svg">
-            </div>
-            <div class="ten-text">
-                <h2>
-                    Champions of customer service
-                </h2>
-            <div class="ten-sp">
-                <h4>
-                    Our Products
-                </h4>
-            <div class="ten-p">
-                <p>
-                    Zendesk for service
-                </p>
-                <p>
-                    Zendesk for sales
-                </p>
-                <p>
-                    Sunshine Platform
-                </p>
-                <p>
-                    Marketplace
-                </p>
-                <p>
-                    Product updates
-                </p>
-            </div>
-            </div>
-            <div class="ten-sp">
-                <h4>
-                    Top Features
-                </h4>
-            <div class="ten-p">
-                <p>
-                    Ticketing system
-                </p>
-                <p>
-                    Messaging & live chat
-                </p>
-                <p>
-                    Help center
-                </p>
-                <p>
-                    Voice
-                </p>
-                <p>
-                    Community forums
-                </p>
-                <p>
-                    Reporting & analytics
-                </p>
-                <p>
-                    Answer Bot
-                </p>
-                <p>
-                    Customer service software
-                </p>
-                <p>
-                    Ticketing system software
-                </p>
-                <p>
-                    Live chat software
-                </p>
-                <p>
-                    Knowledge base
-                </p>
-                <p>
-                    Forum software
-                </p>
-                <p>
-                    Help desk software
-                </p>
-            </div>
-            </div>
-            <div class="ten-sp">
-                <h4>
-                    Resources
-                </h4>
-            <div class="ten-p">
-                <p>
-                    Security
-                </p>
-                <p>
-                    Product support
-                </p>
-                <p>
-                    Request a demo
-                </p>
-                <p>
-                    Blog
-                </p>
-                <p>
-                    Training
-                </p>
-                <p>
-                    Partners
-                </p>
-                <p>
-                    Webinars
-                </p>
-                <p>
-                    Customer Stories
-                </p>
-                <p>
-                    Services
-                </p>
-            </div>
-            </div>
-            <div class="ten-sp">
-                <h4>
-                    Company
-                </h4>
-            <div class="ten-p">
-                <p>
-                    About us
-                </p>
-                <p>
-                    Newsroom
-                </p>
-                <p>
-                    Investors
-                </p>
-                <p>
-                    Events
-                </p>
-                <p>
-                    Careers
-                </p>
-                <p>
-                    Diversity & Inclusion
-                </p>
-                <P>
-                    Sustainability
-                </P>
-                <p>
-                    Contact us
-                </p>
-                <p>
-                    Sitemap
-                </p>
-                <p>
-                    System status
-                </p>
-                <p>
-                    Zendesk Foundation
-                </p>
-                <p>
-                    Legal
-                </p>
-            </div>
-            </div>
-            <div class="ten-sp">
-                <h4>
-                    Favorite Things
-                </h4>
-            <div class="ten-p">
-                <p>
-                    What is Zendesk
-                </p>
-                <p>
-                    Zendesk for Enterprise
-                </p>
-                <p>
-                    Zendesk for Small Business
-                </p>
-                <p>
-                    Zendesk for Startups
-                </p>
-                <p>
-                    Zendesk Benchmark
-                </p>
-                <p>
-                    Gartner CRM Magic Quadrant
-                </p>
-                <p>
-                    Customer Experience Trends
-                </p>
-                <p>
-                    What is CRM?
-                </p>
-                <p>
-                    CRM software guide
-                </p>
-                <p>
-                    Join our research panel
-                </p>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="end">
-                <div class="end-top">
-                    <div class="end-text">
-                        <h3>
-                            Enter the fold
-                        </h3>
-                        <p>
-                            Subscribe to our newsletter.
-                        </p>
-                    </div>
-                    <div class="end-search">
-                        <input type="text" class="name-input" placeholder="What's your email?">
-                        <button type="submit" class="subcribe">Subscribe</button>
-                    </div>
-                    <div class="end-img">
-                        <img src="/logo/Frame (23).svg">
-                        <img src="/logo/Frame (24).svg">
-                        <img src="/logo/Frame (25).svg">
-                        <img src="/logo/Frame (26).svg">
-                        <img src="/logo/Frame (27).svg">
+                <div class="ten-top">
+                        <img src="logo/Frame (17).svg" alt="Zendesk">
+                    <div class="ten-text">
+                        <h2>
+                            Champions of customer service
+                        </h2>
+                        <div class="ten-sp">
+                            <h4>
+                                Our Products
+                            </h4>
+                            <div class="ten-p">
+                                <p>Zendesk for service</p>
+                                <p>Zendesk for sales</p>
+                                <p>Sunshine Platform</p>
+                                <p>Marketplace</p>
+                                <p>Product updates</p>
+                            </div>
+                        </div>
+                        <div class="ten-sp">
+                            <h4>
+                                Top Features
+                            </h4>
+                            <div class="ten-p">
+                                <p>Ticketing system</p>
+                                <p>Messaging & live chat</p>
+                                <p>Help center</p>
+                                <p>Voice</p>
+                                <p>Community forums</p>
+                                <p>Reporting & analytics</p>
+                                <p>Answer Bot</p>
+                                <p>Customer service software</p>
+                                <p>Ticketing system software</p>
+                                <p>Live chat software</p>
+                                <p>Knowledge base</p>
+                                <p>Forum software</p>
+                                <p>Help desk software</p>
+                            </div>
+                        </div>
+                        <div class="ten-sp">
+                            <h4>
+                                Resources
+                            </h4>
+                            <div class="ten-p">
+                                <p>Security</p>
+                                <p>Product support</p>
+                                <p>Request a demo</p>
+                                <p>Blog</p>
+                                <p>Training</p>
+                                <p>Partners</p>
+                                <p>Webinars</p>
+                                <p>Customer Stories</p>
+                                <p>Services</p>
+                            </div>
+                        </div>
+                        <div class="ten-sp">
+                            <h4>
+                                Company
+                            </h4>
+                            <div class="ten-p">
+                                <p>About us</p>
+                                <p>Newsroom</p>
+                                <p>Investors</p>
+                                <p>Events</p>
+                                <p>Careers</p>
+                                <p>Diversity & Inclusion</p>
+                                <p>Sustainability</p>
+                                <p>Contact us</p>
+                                <p>Sitemap</p>
+                                <p>System status</p>
+                                <p>Zendesk Foundation</p>
+                                <p>Legal</p>
+                            </div>
+                        </div>
+                        <div class="ten-sp">
+                            <h4>
+                                Favorite Things
+                            </h4>
+                            <div class="ten-p">
+                                <p>What is Zendesk</p>
+                                <p>Zendesk for Enterprise</p>
+                                <p>Zendesk for Small Business</p>
+                                <p>Zendesk for Startups</p>
+                                <p>Zendesk Benchmark</p>
+                                <p>Gartner CRM Magic Quadrant</p>
+                                <p>Customer Experience Trends</p>
+                                <p>What is CRM?</p>
+                                <p>CRM software guide</p>
+                                <p>Join our research panel</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="end-bot">
-                    <span>
-                        Terms of Use
-                    </span>
-                        
-                    <span>
-                        Privacy Notice
-                    </span>
-                    <span>
-                        Cookie Notice
-                    </span>
-                    <span>
-                        &copyZandesk 2023
-                    </span>
+                <hr class="line">
+                <div class="end">
+                    <div class="end-top">
+                        <div class="end-text">
+                            <h3>
+                                Enter the fold
+                            </h3>
+                            <p>
+                                Subscribe to our newsletter.
+                            </p>
+                        </div>
+                        <div class="end-search">
+                            <input
+                                type="text"
+                                class="name-input"
+                                placeholder="What's your email?"
+                            >
+                            <button
+                                type="submit"
+                                class="subcribe"
+                            >
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="end-img">
+
+                            <img src="logo/Frame (23).svg" alt="Social">
+                            <img src="logo/Frame (24).svg" alt="Social">
+                            <img src="logo/Frame (25).svg" alt="Social">
+                            <img src="logo/Frame (30).svg" alt="Social">
+                            <img src="logo/Frame (27).svg" alt="Social">
+                        </div>
+                    </div>
+                    <div class="end-bot">
+                        <span>
+                            Terms of Use
+                        </span>
+                        <span>
+                            Privacy Notice
+                        </span>
+                        <span>
+                            Cookie Notice
+                        </span>
+                        <span>
+                            &copy; Zendesk 2023
+                        </span>
+                    </div>
                 </div>
             </div>
-            </div>
-           </footer>
+        </footer>
     </div>
 </body>
 </html>
